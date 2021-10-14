@@ -43,7 +43,7 @@ class _LoginState extends State<Login> {
         ],
       ),
       body: Container(
-        margin: EdgeInsets.all(25.0),
+        margin: EdgeInsets.all(10.0),
         color: Colors.blue.shade800,
         child: Column(
           children: [
@@ -80,7 +80,7 @@ class _LoginState extends State<Login> {
                     cursorColor: Colors.amber.shade300,
                     controller: txtLogin,
                     decoration: InputDecoration(
-                      labelText: 'Login',
+                      labelText: 'Nome de usuario',
                       border: OutlineInputBorder(),
                     ),
                   ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 // arquivos de telas
 import 'Telas/home.dart';
 import 'Telas/login.dart';
+import 'Telas/paginas/paginas_grid/tela_sobre.dart';
 import 'Telas/signin_up.dart';
 //import 'Telas/paginas/Sobre.dart';
 
@@ -61,6 +62,7 @@ void main() {
           '/t1': (context) => Login(),
           '/t2': (context) => Cadastro(),
           '/t3': (context) => TelaPrincipal(),
+          '/t4': (context) => Tela_sobre_stl(),
           
         },
 home: TelaPrincipal(),
