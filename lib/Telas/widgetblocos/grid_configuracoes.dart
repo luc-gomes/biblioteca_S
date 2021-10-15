@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:biblioteca_p1/Telas/signin_up.dart';
 
 class GridMenuConfiguracoes extends StatefulWidget {
   const GridMenuConfiguracoes({Key? key}) : super(key: key);
@@ -8,6 +9,8 @@ class GridMenuConfiguracoes extends StatefulWidget {
 }
 
 class _GridMenuConfiguracoesState extends State<GridMenuConfiguracoes> {
+  get obj => null;
+
   @override
   Widget build(BuildContext context) {
     return GridView.count(
@@ -16,7 +19,6 @@ class _GridMenuConfiguracoesState extends State<GridMenuConfiguracoes> {
       crossAxisSpacing: 10,
       mainAxisSpacing: 10,
       crossAxisCount: 2,
-      
       children: <Widget>[
         //---------------------------------------------------------------------
 
@@ -54,7 +56,8 @@ class _GridMenuConfiguracoesState extends State<GridMenuConfiguracoes> {
           color: Colors.blueAccent[100],
         ),
 
-        Container(//criativo
+        Container(
+          //criativo
           // FAVORITOS
           padding: const EdgeInsets.all(8),
           child: Column(
@@ -87,7 +90,8 @@ class _GridMenuConfiguracoesState extends State<GridMenuConfiguracoes> {
           ),
           color: Colors.blueAccent[100],
         ),
-        Container(// ajuda
+        Container(
+          // ajuda
           // FAVORITOS
           padding: const EdgeInsets.all(8),
           child: Column(
@@ -120,8 +124,9 @@ class _GridMenuConfiguracoesState extends State<GridMenuConfiguracoes> {
           ),
           color: Colors.blueAccent[100],
         ),
-        Container(//sobre
-          
+        Container(
+          //sobre
+
           padding: const EdgeInsets.all(8),
           child: Column(
             children: [
@@ -132,8 +137,14 @@ class _GridMenuConfiguracoesState extends State<GridMenuConfiguracoes> {
                   color: Colors.orange.shade300,
                   onPressed: () {
                     setState(() {
-                      // colocar alguma ação aqui
-                      Navigator.pushNamed(context, '/t4');
+                       
+                  /*    var obj = Dados(
+                       var nome.text,
+                        email.text,
+                        nickname.text,
+                      );
+*/
+                      Navigator.pushNamed(context, '/t4', arguments: obj);
                     });
                   },
                 ),
@@ -153,13 +164,15 @@ class _GridMenuConfiguracoesState extends State<GridMenuConfiguracoes> {
           ),
           color: Colors.blueAccent[100],
         ),
-        Container(//conta
+        Container(
+          //conta
           // FAVORITOS
           padding: const EdgeInsets.all(8),
           child: Column(
             children: [
               Container(
-                child: IconButton(//icon button sconta
+                child: IconButton(
+                  //icon button sconta
                   icon: Icon(Icons.account_box_sharp),
                   iconSize: 90,
                   color: Colors.orange.shade300,
@@ -171,7 +184,8 @@ class _GridMenuConfiguracoesState extends State<GridMenuConfiguracoes> {
                   },
                 ),
               ),
-              Container(//rotulo conta
+              Container(
+                //rotulo conta
                 padding: EdgeInsets.all(30),
                 child: Text(
                   'conta',
@@ -186,12 +200,14 @@ class _GridMenuConfiguracoesState extends State<GridMenuConfiguracoes> {
           ),
           color: Colors.blueAccent[100],
         ),
-        Container(//sair
+        Container(
+          //sair
           // FAVORITOS
           padding: const EdgeInsets.all(8),
           child: Column(
             children: [
-              Container(//icon button sair
+              Container(
+                //icon button sair
                 child: IconButton(
                   icon: Icon(Icons.logout_sharp),
                   iconSize: 90,
@@ -204,7 +220,8 @@ class _GridMenuConfiguracoesState extends State<GridMenuConfiguracoes> {
                   },
                 ),
               ),
-              Container(// rotulo sair
+              Container(
+                // rotulo sair
                 padding: EdgeInsets.all(30),
                 child: Text(
                   'sair',

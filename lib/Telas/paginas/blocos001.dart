@@ -34,9 +34,10 @@ class _FeedBlocos01State extends State<FeedBlocos01> {
           
     ),
      WidgetHistoria('lib/img/dicionario_aurelio.jpg','Dicionario Aurélio'),
+     WidgetHistoria('lib/img/dona_flor.jpg','Dona flor e seus dois maridos'),
      WidgetHistoria('lib/img/Bras_cubas.jpg','Memorias postomas de Bras Cubas'),
      WidgetHistoria('lib/img/dom_casmurro.jpg','Dom Casmurro'),
-     WidgetHistoria('lib/img/dona_flor.jpg','Dona flor e seus dois maridos'),
+     
     
   
     ],

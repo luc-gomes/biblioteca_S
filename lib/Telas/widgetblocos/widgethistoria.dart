@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-
-
 class WidgetHistoria extends StatelessWidget {
 
   final String capa;

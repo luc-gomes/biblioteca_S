@@ -4,9 +4,8 @@ class Dados {
   final String nome;
   final String email;
   final String nickname;
- // SingingCharacter? _character;
-
-  Dados(this.nome, this.email, this.nickname, /*this._character*/);
+  
+  Dados(this.nome, this.email, this.nickname);
 }
 enum SingingCharacter { Masculino, Feminino }
 
@@ -18,15 +17,14 @@ class Cadastro extends StatefulWidget {
 }
 
 class _CadastroState extends State<Cadastro> {
-  SingingCharacter? _character = SingingCharacter.Masculino;
+ // SingingCharacter? _character = SingingCharacter.Masculino;
   // como pegar o dado da linha acima e colocar dentro do obj dados?
   var nome = TextEditingController();
   var email = TextEditingController();
   var nickname = TextEditingController();
   var senha = TextEditingController();
   var confirmasenha = TextEditingController();
-//var  _estaSelecionado = false;
- 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,8 +33,7 @@ class _CadastroState extends State<Cadastro> {
          ), // appBar: 
       body: Container(
         padding: EdgeInsets.all(15),
-      //decoração
-      decoration: BoxDecoration(
+        decoration: BoxDecoration(
         border:  Border.all(
         color:  Colors.orange.shade300,
        // width: 15,
@@ -44,8 +41,6 @@ class _CadastroState extends State<Cadastro> {
       color: Colors.blue,
       ),
       width: MediaQuery.of(context).size.width *0.99,
-      //height: 700,
-
         child: Column(
           children: [
             Container(//Container de titulo
@@ -61,67 +56,113 @@ class _CadastroState extends State<Cadastro> {
             Container(
              child:
               Column(
-
                 children: [
 
-
                 TextField(//NOME
-                  controller: nome,
+                   cursorColor: Colors.amber.shade300,
                   decoration: InputDecoration(
-                    labelText: 'Nome completo',
-                    border: OutlineInputBorder(),
-                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.amber, width: 3.0),
+                ),
+                  enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.amber, width: 
+                  1.0),
+                ),
+                  hintText: 'Nome completo:',
+                  hintStyle: TextStyle( color: Colors.amberAccent.shade700),
+              ),
+
+                  controller: nome,
+                  
                 ),
                 SizedBox(height: 10),
         
                 TextField(// EMAIL DO USUARIO
-              controller: email,
-              keyboardType: TextInputType.emailAddress,
-              maxLines: 1,
-              decoration: InputDecoration(
-                labelText: 'E-Mail',
-                border: OutlineInputBorder(),
-                alignLabelWithHint: true,
-              ),
+                 cursorColor: Colors.amber.shade300,
+                  decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.amber, width: 3.0),
+                ),
+                  enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.amber, width: 
+                  1.0),
+                ),
+                  hintText: 'E-mail:',
+                  hintStyle: TextStyle( color: Colors.amberAccent.shade700),
+              ),  
+                  controller: email,
+                  keyboardType: TextInputType.emailAddress,
+                  maxLines: 1,
+                
             ),
                 SizedBox(height: 10),
            
                 TextField( // NICKNAME
-              controller: nickname,
-              keyboardType: TextInputType.name,
-              maxLines: 1,
-              decoration: InputDecoration(
-                labelText: 'Nome de usuario',
-                border: OutlineInputBorder(),
-                alignLabelWithHint: true,
+                  cursorColor: Colors.amber.shade300,
+                  decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.amber, width: 3.0),
+                ),
+                  enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.amber, width: 
+                  1.0),
+                ),
+                  hintText: 'Nome de usuario:',
+                  hintStyle: TextStyle( color: Colors.amberAccent.shade700),
               ),
-            ),
+                  controller: nickname,
+                  keyboardType: TextInputType.name,
+                  maxLines: 1,
+              ),
+            
                 SizedBox(height: 10),
                   
                 TextField(// senha
-                    controller: senha,
-                    keyboardType: TextInputType.visiblePassword,
-                    maxLines: 1,
-                    decoration: InputDecoration(
-                    labelText: 'Senha:',
-                    border: OutlineInputBorder(),
-                    alignLabelWithHint: true,
-              ),
-            ),
-                  SizedBox(height: 10),
+                   cursorColor: Colors.amber.shade300,
+                  decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.amber, width: 3.0),
+                ),
+                  enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.amber, width: 
+                  1.0),
+                ),
+                  hintText: 'senha:',
+                  hintStyle: TextStyle( color: Colors.amberAccent.shade700),
+              ),  
+                  controller: senha,
+                  keyboardType: TextInputType.visiblePassword,
+                  maxLines: 1,
+                ),
+            
+                SizedBox(height: 10),
                  
                 TextField(// confirma senha
-                    controller: confirmasenha,
-                    keyboardType: TextInputType.visiblePassword,
-                    maxLines: 1,
-                    decoration: InputDecoration(
-                    labelText: 'Confirmar senha:',
-                    border: OutlineInputBorder(),
-                    alignLabelWithHint: true,
-                  ),
+                  cursorColor: Colors.amber.shade300,
+                  decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.amber, width: 3.0),
                 ),
-                   SizedBox(height: 10),
+                  enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.amber, width: 
+                  1.0),
+                ),
+                  hintText: 'Confirme sua senha:',
+                  hintStyle: TextStyle( color: Colors.amberAccent.shade700),
+              ),
+                  
+                  controller: confirmasenha,
+                  keyboardType: TextInputType.visiblePassword,
+                  maxLines: 1,
+                  ),
+                
+                  SizedBox(height: 10),
 
+
+
+
+
+/*
                 Row(
                   children: <Widget>[
                     RadioListTile<SingingCharacter>(
@@ -146,8 +187,7 @@ class _CadastroState extends State<Cadastro> {
                 ),
               ],
               ),
-
-     ],
+    */ ],
     ),
   ),
      

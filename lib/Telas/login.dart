@@ -10,44 +10,23 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   var txtLogin = TextEditingController();
   var txtSenha = TextEditingController();
-
-  get obj => null;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Login'),
-        //-> inicio da parte BOTÃO SOBRE
-        // ------------------botao sobre --------------
-        actions: [
-          IconButton(
-            icon: Icon(
-              Icons.account_box,
-              color: Colors.white,
-            ),
-            onPressed: () {
-              // ATALHO PARA TELA DE SOBRE
-              setState(() {
-
-/*
-                Navigator.pushNamed(
-                  context,
-                  't3',
-                   arguments: obj
-                   );
-                   */
-              });
-            },
-          ),
-        ],
-      ),
       body: Container(
-        margin: EdgeInsets.all(10.0),
-        color: Colors.blue.shade800,
+        margin: EdgeInsets.all(5.0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+          border: Border.all(
+            color: Colors.orange.shade300,
+            width: 10,
+          ),
+          color: Colors.blue.shade800,
+        ),
         child: Column(
           children: [
-            Container( // container onde tem o incone do usuario
+            Container(
+              //Incone do usuario
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -57,9 +36,10 @@ class _LoginState extends State<Login> {
                 ],
               ),
             ),
-            Container(// container onde tem o Nome do aplicativo
-              child: 
-              Column(// LOGO E NOME DO APP
+            Container(
+              // Nome do aplicativo
+              child: Column(
+                // LOGO E NOME DO APP
                 children: [
                   // mainAxisAlignment: MainAxisAlignment.center,
                   Text(
@@ -73,50 +53,63 @@ class _LoginState extends State<Login> {
                 ],
               ),
             ),
-            Container(// container onde tem o Nome do aplicativo
+            Container(
+              // LOGIN E SENHA
               child: Column(
                 children: [
                   TextField(
                     cursorColor: Colors.amber.shade300,
-                    controller: txtLogin,
                     decoration: InputDecoration(
-                      labelText: 'Nome de usuario',
-                      border: OutlineInputBorder(),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Colors.amber.shade300, width: 3.0),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.amber, width: 1.0),
+                      ),
+                      hintText: 'Nome de usuario:',
+                      hintStyle: TextStyle(color: Colors.amberAccent.shade700),
                     ),
+                    controller: txtLogin,
                   ),
                   SizedBox(height: 10),
                   TextField(
                     cursorColor: Colors.amber.shade300,
+                    decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Colors.amber.shade300, width: 3.0),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.amber, width: 1.0),
+                      ),
+                      hintText: 'Senha:',
+                      hintStyle: TextStyle(color: Colors.amberAccent.shade700),
+                    ),
                     controller: txtSenha,
                     keyboardType: TextInputType.visiblePassword,
                     maxLines: 1,
-                    decoration: InputDecoration(
-                      labelText: 'Senha',
-                      border: OutlineInputBorder(),
-                      alignLabelWithHint: true,
-                    ),
                   ),
                   SizedBox(height: 10),
                 ],
               ),
             ),
-            Container(// container com botoes de acesso para a tela incial e cadastro
+            Container(
+              // botoes de acesso para a tela incial e cadastro
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                  
                     child: Text(
                       'Login',
                       style: TextStyle(
                           fontSize: 42,
                           fontStyle: FontStyle.normal,
-                          color: Colors.white),
+                          color: Colors.orange),
                       textAlign: TextAlign.center,
                     ),
                     onPressed: () {
                       setState(() {
-                        
                         Navigator.pushNamed(context, '/t3');
                       });
                     },
@@ -129,11 +122,11 @@ class _LoginState extends State<Login> {
                   ),
                   ElevatedButton(
                     child: Text(
-                      'Cadastre',
+                      'Cadastre-se',
                       style: TextStyle(
                           fontSize: 42,
                           fontStyle: FontStyle.normal,
-                          color: Colors.white),
+                          color: Colors.orange),
                       textAlign: TextAlign.center,
                     ),
                     onPressed: () {

@@ -1,7 +1,7 @@
 
 
 import 'package:flutter/material.dart';
-import '/Telas/signin_up.dart';
+import 'package:biblioteca_p1/Telas/signin_up.dart' show Dados;
  
 
 // 
@@ -12,7 +12,7 @@ class Tela_sobre_stl extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final Dados obj = ModalRoute.of(context)!.settings.arguments as Dados;
+    final obj = ModalRoute.of(context)!.settings.arguments as Dados;
 
     return Scaffold(appBar: AppBar(
       title:Text('Sobre:'),),
@@ -122,7 +122,7 @@ class Tela_sobre_stl extends StatelessWidget {
          Text(obj.nome),
         Text('email de usuario CADASTRADO'),
          Text( obj.email),
-         Text('Nascimento de usuario CADASTRADO(não validado)'),
+         Text('Nome do usuario'),
          Text(obj.nickname),
 
           

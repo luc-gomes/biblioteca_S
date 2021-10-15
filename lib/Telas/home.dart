@@ -1,7 +1,6 @@
 //import 'package:biblioteca_p1/Telas/paginas/confg_ui.dart';
 import 'package:biblioteca_p1/Telas/widgetblocos/grid_configuracoes.dart';
 import 'package:flutter/material.dart';
-import '/Telas/paginas/Sobre.dart';
 import '/Telas/paginas/blocos001.dart';
 //import '/Telas/paginas/confg_ui.dart';
 class TelaPrincipal extends StatefulWidget {
@@ -20,26 +19,12 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
 
   @override
   Widget build(BuildContext context) {
-      // recuperar dados de cadastro
-      //
-
-  //  final Dados obj = ModalRoute.of(context)!.settings.arguments as Dados;
-
-    return Scaffold(
-      //
-      // BODY
-      //
-      body: PageView(
+       return Scaffold(
+        body: PageView(
         controller: pageController,
         children: [
           FeedBlocos01(),
-          Tela_Sobre(),
           GridMenuConfiguracoes(),
-          //List_configuracoes(),
-          /*   TelaHome(), // currentIndex = 0
-          TelaPesquisar(), // currentIndex = 1
-          TelaNotificacoes(), // currentIndex = 2
-          TelaConfiguracoes(), */ // currentIndex = 3
         ],
         onPageChanged: (index) {
           setState(() {
@@ -47,7 +32,6 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
           });
         },
       ),
-
       //
       // BARRA DE NAVEGAÇÃO
       //
@@ -55,14 +39,11 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
         type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.blue.shade900,
 
-        selectedItemColor: Colors.white,
+        selectedItemColor: Colors.orange.shade400,
         unselectedItemColor: Colors.white.withOpacity(.40),
-
         selectedFontSize: 16,
         unselectedFontSize: 16,
-
         iconSize: 40,
-
         //Index do Botão Selecionado
         currentIndex: telaAtual,
         items: [
@@ -70,22 +51,17 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
             icon: Icon(Icons.home),
             label: 'Home',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: '******',
-          ),
+         
           BottomNavigationBarItem(
             icon: Icon(Icons.info),
             label: 'configuraçoes',
           ),
         ],
-
         // Mudança de Tela (Página)
         onTap: (index) {
           setState(() {
             telaAtual = index;
           });
-
           pageController.animateToPage(
             index,
             duration: Duration(milliseconds: 200),
