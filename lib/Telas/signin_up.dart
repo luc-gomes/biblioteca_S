@@ -22,8 +22,8 @@ class _CadastroState extends State<Cadastro> {
   var nome = TextEditingController();
   var email = TextEditingController();
   var nickname = TextEditingController();
-  var senha = TextEditingController();
-  var confirmasenha = TextEditingController();
+ // var senha = TextEditingController();
+  //var confirmasenha = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class _CadastroState extends State<Cadastro> {
         color:  Colors.orange.shade300,
        // width: 15,
         ),
-      color: Colors.blue,
+      color: Colors.blue.shade400,
       ),
       width: MediaQuery.of(context).size.width *0.99,
         child: Column(
@@ -57,7 +57,6 @@ class _CadastroState extends State<Cadastro> {
              child:
               Column(
                 children: [
-
                 TextField(//NOME
                    cursorColor: Colors.amber.shade300,
                   decoration: InputDecoration(
@@ -76,7 +75,7 @@ class _CadastroState extends State<Cadastro> {
                   
                 ),
                 SizedBox(height: 10),
-        
+       
                 TextField(// EMAIL DO USUARIO
                  cursorColor: Colors.amber.shade300,
                   decoration: InputDecoration(
@@ -130,7 +129,7 @@ class _CadastroState extends State<Cadastro> {
                   hintText: 'senha:',
                   hintStyle: TextStyle( color: Colors.amberAccent.shade700),
               ),  
-                  controller: senha,
+                //  controller: senha,
                   keyboardType: TextInputType.visiblePassword,
                   maxLines: 1,
                 ),
@@ -151,7 +150,7 @@ class _CadastroState extends State<Cadastro> {
                   hintStyle: TextStyle( color: Colors.amberAccent.shade700),
               ),
                   
-                  controller: confirmasenha,
+                 // controller: confirmasenha,
                   keyboardType: TextInputType.visiblePassword,
                   maxLines: 1,
                   ),
@@ -202,7 +201,7 @@ class _CadastroState extends State<Cadastro> {
                   );
 
                 Navigator.pushNamed(context, '/t3' ,arguments: obj);
-                 
+                Navigator.pushNamed(context, 't4' ,arguments: obj);
                 });
               },
             ),

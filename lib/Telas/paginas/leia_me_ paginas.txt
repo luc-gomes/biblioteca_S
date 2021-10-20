@@ -1,0 +1,4 @@
+em paginas esta contidos paginas especificas/soltas do aplicativo, assim como:
+
+tela sobre
+tela de feed 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:biblioteca_p1/Telas/signin_up.dart';
+//import 'package:biblioteca_p1/Telas/signin_up.dart';
 
 class GridMenuConfiguracoes extends StatefulWidget {
   const GridMenuConfiguracoes({Key? key}) : super(key: key);

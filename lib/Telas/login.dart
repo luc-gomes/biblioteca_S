@@ -12,6 +12,8 @@ class _LoginState extends State<Login> {
   var txtSenha = TextEditingController();
   @override
   Widget build(BuildContext context) {
+
+    
     return Scaffold(
       body: Container(
         margin: EdgeInsets.all(5.0),
@@ -110,7 +112,9 @@ class _LoginState extends State<Login> {
                     ),
                     onPressed: () {
                       setState(() {
-                        Navigator.pushNamed(context, '/t3');
+                          caixaDialogo("cadastre-se para logar");
+                    
+                        //Navigator.pushNamed(context, '/t3',arguments: obj);
                       });
                     },
                   ),
@@ -143,4 +147,27 @@ class _LoginState extends State<Login> {
       ),
     );
   }
+
+
+ caixaDialogo(msg){
+    return showDialog(
+      context: context,
+      builder: (BuildContext context){
+        return AlertDialog(
+          title: Text('Login'),
+          content: Text(msg),
+          actions: [
+            TextButton(
+              child: Text('fechar'),
+              onPressed: (){
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      }
+    );
+  }
+
+
 }

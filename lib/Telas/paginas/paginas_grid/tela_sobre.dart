@@ -1,9 +1,6 @@
 
-
 import 'package:flutter/material.dart';
-import 'package:biblioteca_p1/Telas/signin_up.dart' show Dados;
- 
-
+//import 'package:biblioteca_p1/Telas/signin_up.dart' show  Dados;
 // 
 // ignore: camel_case_types
 class Tela_sobre_stl extends StatelessWidget {
@@ -11,9 +8,14 @@ class Tela_sobre_stl extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // recuperar dados da classe DADOS
+    //
+    //
 
-    final obj = ModalRoute.of(context)!.settings.arguments as Dados;
-
+   // final obj = ModalRoute.of(context)!.settings.arguments as Dados ;
+//
+//
+//
     return Scaffold(appBar: AppBar(
       title:Text('Sobre:'),),
       body: Container( 
@@ -48,32 +50,26 @@ class Tela_sobre_stl extends StatelessWidget {
 
      ),
      Container(
-  
-      margin: EdgeInsets.fromLTRB(40, 40, 40, 40),
-      //padding: EdgeInsets.all(30),
-      //decoração
-      decoration: BoxDecoration(
-        border:  Border.all(
+        margin: EdgeInsets.fromLTRB(40, 40, 40, 40),
+          decoration: BoxDecoration(
+          border:  Border.all(
           color:  Colors.orange.shade200,
           width: 5,
+          ),
         ),
-     
-      ),
-      width: MediaQuery.of(context).size.width *0.70,
-      height: 700,
-      child: Column(children: [
+        width: MediaQuery.of(context).size.width *0.70,
+        //height: 700,
+        child: Column(children: [
         // colocar imagem
         Image.asset('lib/img/lucas_gomes_da_silva.jpg'
         ),
        
       Container(
-         width: 250,
-         child: Column(
-           
-         mainAxisAlignment: MainAxisAlignment.center,
-         children: [
-           // 
-            Text('Lucas gomes da silva',
+        width: 250,
+        child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text('Lucas gomes da silva',
               style: TextStyle(
               fontSize: 22,
               fontWeight: FontWeight.bold,
@@ -85,18 +81,17 @@ class Tela_sobre_stl extends StatelessWidget {
        ),),
       Container(
            padding: EdgeInsets.all(30),
-      //decoração
-      decoration: BoxDecoration(
-        border:  Border.all(
+           //decoração
+          decoration: BoxDecoration(
+          border:  Border.all(
           color:  Colors.amber.shade900,
-          width: 10,
+          //width: 10,
         ),
       color: Colors.blue[400],
       ),
       width: MediaQuery.of(context).size.width *0.99,
+      child: Column(children: [
       
-             child: Column(children: [
-       
           Text('Prototipo base de catalogo de livros e consumo multimidia.',
               style: TextStyle(
               fontSize: 22,
@@ -106,53 +101,36 @@ class Tela_sobre_stl extends StatelessWidget {
             ],
           ), 
         ),
+      /*
       Container(
+
            padding: EdgeInsets.all(30),
-      //decoração
-      decoration: BoxDecoration(
-        border:  Border.all(
-          color:  Colors.amber.shade900,
-          width: 10,
-        ),
-      color: Colors.blue[400],
-      ),
-      width: MediaQuery.of(context).size.width *0.99,
-      child: Column(children: [
-         Text('Nome de usuario CADASTRADO'),
-         Text(obj.nome),
-        Text('email de usuario CADASTRADO'),
-         Text( obj.email),
-         Text('Nome do usuario'),
-         Text(obj.nickname),
-
-          
+             //decoração
+            decoration: BoxDecoration(
+              border:  Border.all(
+              color:  Colors.amber.shade900,
+              width: 10,
+            ),
+            color: Colors.blue[400],
+            ),
+            width: MediaQuery.of(context).size.width *0.99,
+            child: Column(children: [
+            Text('Nome de usuario CADASTRADO'),
+            Text(obj.nome),
+            Text('email de usuario CADASTRADO'),
+            Text( obj.email),
+            Text('Nome do usuario'),
+        //    Text(obj.nickname),
+         
         ],
       ),
-      ),
+    ),
 
-      ],),
-
-
-
-     ),
-        ],
-        
-      ),
-      ),
-      );
-    
-
-
-
-
-
-
-
-
-
-
-
-      
-    
-      }
+*/
+  ],),
+ ),
+  ],),
+  ),
+);    
+}
 }

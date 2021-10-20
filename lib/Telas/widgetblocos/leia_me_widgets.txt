@@ -1,0 +1,4 @@
+na pasta wisdgetes tem objetos ou formas para partes do aplicativo
+
+tais como molde para tela de configuraçoes 
+mode para apresentação da capa de um livro da biblioteca no feed de exposição de livros do acervo
