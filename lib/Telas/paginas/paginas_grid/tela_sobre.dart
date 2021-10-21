@@ -92,7 +92,7 @@ class Tela_sobre_stl extends StatelessWidget {
       width: MediaQuery.of(context).size.width *0.99,
       child: Column(children: [
       
-          Text('Prototipo base de catalogo de livros e consumo multimidia.',
+          Text('Prototipo base para plataforma de entretenimento multimidia.',
               style: TextStyle(
               fontSize: 22,
               fontWeight: FontWeight.bold,

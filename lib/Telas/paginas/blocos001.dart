@@ -17,6 +17,15 @@ class _FeedBlocos01State extends State<FeedBlocos01> {
 
     final obj = ModalRoute.of(context)!.settings.arguments as Dados;
 
+    //visibilidade do conteiner
+
+    bool _isVisible = true;
+
+    void showToast() {
+      setState(() {
+        _isVisible = !_isVisible;
+      });
+    }
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -33,35 +42,61 @@ class _FeedBlocos01State extends State<FeedBlocos01> {
                 color: Colors.blue[400],
               ),
               width: MediaQuery.of(context).size.width * 0.99,
-              child: Column(
-                children: [
-                  Text('Seja bem vindo:',
-                   style: TextStyle(
-                      fontSize: 43,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),),
-                  Text(obj.nome,
-                   style: TextStyle(
-                      fontSize: 30,
-                      fontStyle: FontStyle.italic,
-                      color: Colors.grey.shade400,
-                    ),),
-                  Text('Confirme seu email:',
-                   style: TextStyle(
-                      fontSize: 33,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey.shade800,
-                    ),),
-                  Text(obj.email,
-                   style: TextStyle(
-                      fontSize: 28,
-                      fontStyle: FontStyle.normal,
-                      color: Colors.grey.shade400,
-                    ),),
-                /*  Text('Nome do usuario'),
-                     Text(obj.nickname),*/
-                ],
+              child: Visibility(
+                visible: _isVisible,
+                child: Card(
+                  child: Container(
+                    child: Column(
+                      children: [
+                        Text(
+                          'Seja bem vindo:',
+                          style: TextStyle(
+                            fontSize: 43,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
+                        Text(
+                          obj.nome,
+                          style: TextStyle(
+                            fontSize: 30,
+                            fontStyle: FontStyle.italic,
+                            color: Colors.grey.shade400,
+                          ),
+                        ),
+                        Text(
+                          'Confirme seu email:',
+                          style: TextStyle(
+                            fontSize: 33,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.grey.shade800,
+                          ),
+                        ),
+                        Text(
+                          obj.email,
+                          style: TextStyle(
+                            fontSize: 28,
+                            fontStyle: FontStyle.normal,
+                            color: Colors.grey.shade400,
+                          ),
+                        ),
+                        /*  Text('Nome do usuario'),
+                       Text(obj.nickname),*/
+
+                       ElevatedButton(
+                    child: Text('Confirmar'),
+                    onPressed: () { 
+
+                      //ocultar card e cntainder de forma a sumir com ele da tela
+                      showToast();
+                      _isVisible = false;
+                     },),
+                      ],
+
+                    ),
+                     color: Colors.blue[400],
+                  ),
+                ),
               ),
             ),
             Container(
@@ -71,7 +106,7 @@ class _FeedBlocos01State extends State<FeedBlocos01> {
                 children: [
                   Text(
                     'Acervo:',
-                      style: TextStyle(
+                    style: TextStyle(
                       fontSize: 42,
                       fontStyle: FontStyle.normal,
                       color: Colors.amber.shade800,
